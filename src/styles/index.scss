@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Muller";
+    src: url("../../public/fonts/Muller/MullerMedium.ttf");
+}
+
+* {
+    font-family: "Muller";
+    font-weight: 400;
+}
+
+input {
+    outline:none;
+}
+
+.header__wrapper, .letter-row:hover {
+    background-color: #f1f3f4;
+}
+
+.current-folder {
+    border-left: 3px solid red;
+    transform: translateX(-3px);
+}
+
+.letter__inside {
+    position: absolute;
+    top: 1500px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background: #fff;
+    transition: all .7s ease-out;
+}
+
+.letter-visible {
+    top: 0;
+}
+
+.letter-text {
+    position: relative;
+    height: 600px;
+    overflow: auto;
+}
+
+.modal {
+    &__window {
+        @apply absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2;
+        width: 400px;
+        height: 400px;
+        background: #fff;
+        border-radius: 20px;
+    }
+
+    &__bg {
+        @apply absolute top-0 left-0 w-full h-screen;
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #f1f3f4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.sidebar__inside {
+    max-height: 600px;
+}
