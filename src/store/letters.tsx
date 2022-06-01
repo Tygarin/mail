@@ -3,6 +3,7 @@ import { Letter } from "../interfaces";
 
 class Letters {
     lettersList: Letter[] = []
+    sortValue: string = ''
     constructor() {
         makeAutoObservable(this)
     }
@@ -12,10 +13,13 @@ class Letters {
         this.lettersList = letters ? JSON.parse(letters) :data
     }
 
+    setSortValue(value:string) {
+        this.sortValue = value
+    }
+
     changeLetterType(letterId: number, newType: string) {
         let currentLetter = this.lettersList.find(letter => letter.id === letterId)
         currentLetter!.type = newType
-        localStorage.setItem('letters', JSON.stringify(this.lettersList))
     }
 }
 
