@@ -1,9 +1,9 @@
-import React from 'react';
 import './styles/App.scss';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import MailContent from './components/MailContent';
-import Modal from './components/Modal';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <SideBar />
         <MailContent/>
       </div>
+      <ToastContainer />
     </div>
   );
 }

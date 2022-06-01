@@ -4,6 +4,9 @@ import { folderType } from '../config/baseFolder'
 import folders from '../store/folders'
 import Modal from './Modal'
 import trash from '../img/delete.svg'
+import letters from '../store/letters'
+import { Letter } from '../interfaces'
+import { toast } from 'react-toastify'
 
 const SideBar = observer(
     () => {
@@ -29,7 +32,10 @@ const SideBar = observer(
                             {el.touchable &&
                                 <img className='w-7 h-7'
                                     src={trash}
-                                    onClick={() => folders.removeFolder(el.id)}
+                                    onClick={() => {
+                                        !letters.lettersList.find((letter: Letter) => letter.type === el.type) ?
+                                            folders.removeFolder(el.id) : toast.info('Переместите сообщения в другую папку')
+                                    }}
                                 />
                             }
                         </div>
