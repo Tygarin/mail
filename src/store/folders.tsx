@@ -18,6 +18,12 @@ class Folders {
             touchable: true
         })
     }
+    changeTypeText(id:number, text: string) {
+        const current = this.foldersList.find(folder => folder.id === id)
+        if(text.match(/^([а-яё][А-ЯЁ]+|[a-z][A-Z]+)$/i)) {
+            current!.text = text
+        }
+    }
     removeFolder(id: number) {
         this.foldersList = this.foldersList.filter((e: folderType) => !(e.id === id))
     }
