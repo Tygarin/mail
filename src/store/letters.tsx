@@ -20,6 +20,7 @@ class Letters {
     changeLetterType(letterId: number, newType: string) {
         let currentLetter = this.lettersList.find(letter => letter.id === letterId)
         currentLetter!.type = newType
+        localStorage.setItem('letters', JSON.stringify(this.lettersList))
     }
 }
 
